@@ -55,10 +55,15 @@ main(book_path, question)
 **Technologies Used:**
 
 Python – Core programming language
+
 PyPDF2 – Extracts text from PDF files
+
 FAISS – Efficient text retrieval using similarity search
+
 Sentence Transformers – Converts text into embeddings
+
 Hugging Face Transformers – Uses RoBERTa for question answering
+
 
 **Future Improvements:**
 1. Support for multiple books in a single query
