@@ -89,8 +89,11 @@ LocalStorage – Saves question-answer history on frontend
 
 **Future Improvements:**
 1. Support multiple books in a single query
+
 2.Add voice-based question support
+
 3.Enable multi-language document Q&A
+
 4.Add admin analytics dashboard
 
 **License:**
