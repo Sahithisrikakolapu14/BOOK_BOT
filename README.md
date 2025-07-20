@@ -30,10 +30,15 @@ BookBot helps users save time by analyzing entire documents and answering specif
 **How It Works:**
 
 Load the Book – Reads the text from a PDF or text file
+
 Split Text into Chunks – Breaks the book into small sections
+
 Generate Embeddings – Converts each chunk into numerical vectors
+
 Index with FAISS – Stores the embeddings for fast searching
+
 Retrieve Context – Finds the most relevant text chunk for a given question
+
 Generate an Answer – Uses an AI model to extract the best answer
 
 **Installation & Setup**
@@ -76,15 +81,15 @@ No additional setup or dependencies required - everything runs in the browser!
 
   Try asking questions like:
   
-  "Who is the main character?"
-  
-  "What is the setting of the story?"
-  
-  "What are the main themes?"
-  
-  "Who wrote this book?"
-  
-  "What is the plot summary?"
+     "Who is the main character?"
+     
+     "What is the setting of the story?"
+     
+     "What are the main themes?"
+     
+     "Who wrote this book?"
+     
+     "What is the plot summary?"
 
 **Example Output:**
 
