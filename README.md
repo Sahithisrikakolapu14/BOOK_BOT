@@ -1,15 +1,26 @@
 **BookBot - AI-Powered Book Question Answering System**
 **"Read Less, Learn More!"**
+BookBot is an intelligent, interactive application that allows users to upload documents (PDF or TXT) and ask natural language questions about the content. It combines a clean web interface with advanced NLP techniques to provide accurate, context-based answers.
 
-BookBot is an AI-powered system that helps users quickly find answers from books. By processing books in PDF or text format, BookBot retrieves the most relevant sections and extracts precise answers using Natural Language Processing (NLP) techniques.
+**Overview**
+BookBot helps users save time by analyzing entire documents and answering specific questions directly from their content. It supports file uploads, processes the text using AI, and displays the result instantly in a modern, user-friendly UI.
 
 **Features:**
 1. Supports both PDF and text files
 2. Breaks books into smaller chunks for better processing
 3. Uses FAISS indexing for fast and efficient text retrieval
 4. Employs transformer-based AI models for accurate answers
-5. Works well for students, researchers, and professionals
-
+5. Clean and responsive interface with animations
+6. Works on both desktop and mobile
+7. Works well for students, researchers, and professionals
+**Project Structure**
+  bookbot/
+  ├── index.html         
+  ├── css/
+  │   └── style.css       
+  ├── js/
+  │   └── main.js        
+└── README.md 
 **How It Works:**
 Load the Book – Reads the text from a PDF or text file
 Split Text into Chunks – Breaks the book into small sections
@@ -17,40 +28,47 @@ Generate Embeddings – Converts each chunk into numerical vectors
 Index with FAISS – Stores the embeddings for fast searching
 Retrieve Context – Finds the most relevant text chunk for a given question
 Generate an Answer – Uses an AI model to extract the best answer
+
+**Installation & Setup**
+
+1.Clone or download the project files
+2.Ensure proper folder structure as shown above
+3.Open index.html in your web browser
+No additional setup or dependencies required - everything runs in the browser!
+**Usage**
+**1. Upload a Document**
+  Click the "Choose PDF or TXT file" button
+  Select your document from your device
+  Wait for the processing confirmation
+
+**2. Ask Questions**
+  Type your question in the input field
+  Press Enter or click "Ask" to submit
+  View the AI-generated response
+
+**3. Review History**
+  All questions and answers are automatically saved
+  View your question history in the right panel
+  Clear history when needed
+**Sample Questions**
+  Try asking questions like:
   
-**Installation:**
-1️. Clone the repository
+  "Who is the main character?"
+  "What is the setting of the story?"
+  "What are the main themes?"
+  "Who wrote this book?"
+  "What is the plot summary?"
 
-git clone https://github.com/your-username/BookBot.git
-cd BookBot
+**Example Output:**
 
-2️. Install dependencies
-
-pip install -r requirements.txt
-**How to Run the Project:**
-Once installed, follow these steps to run BookBot:
-
-1️. Ensure you have a book file (PDF or TXT) in the data/ folder
-2️. Run the script with the book file and a question as below.
-
-python bookbot.py --book "data/pride_and_prejudice.pdf" --question "Who is the main character?"
-
-3️. Example Output:
-
-Loading book...
-Generating embeddings...
-Building FAISS index...
-Retrieving relevant context...
-Loading QA model...
-Answering question...
-Q: Who is the main character?
-A: Lady Catherine.
-
--> Alternatively, modify the main() function in bookbot.py and run:
-
-book_path = "data/pride_and_prejudice.pdf"
-question = "Who is the main character?"
-main(book_path, question)
+  Loading book...
+  Generating embeddings...
+  Building FAISS index...
+  Retrieving relevant context...
+  Loading QA model...
+  Answering question...
+  Q: Who is the main character?
+  A: Lady Catherine.
 
 **Technologies Used:**
 
@@ -64,15 +82,21 @@ Sentence Transformers – Converts text into embeddings
 
 Hugging Face Transformers – Uses RoBERTa for question answering
 
+HTML/CSS/JS – Interactive web interface
+
+LocalStorage – Saves question-answer history on frontend
+
 
 **Future Improvements:**
-1. Support for multiple books in a single query
-2. Voice-based search for better user experience
-3. Add support for more languages
+1. Support multiple books in a single query
+2.Add voice-based question support
+3.Enable multi-language document Q&A
+4.Add admin analytics dashboard
 
 **License:**
 This project is open-source and available under the MIT License.
 
 
 **Contact:**
+For questions or collaborations, reach out:
 [sahithisrikakolapu@gmail.com]
