@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Q&A System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1> BookBot | Discover,Understand and Interact with Any Book</h1>
+        
+        <div class="subtitle">
+		Upload your documents to receive smart, AI-powered answers to your questions.
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">📄</span>
+                <span>Supports PDF & TXT files</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">🧠</span>
+                <span>AI-powered analysis</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">💬</span>
+                <span>Natural language queries</span>
+            </div>
+            <div class="feature">
+                <span class="feature-icon">📊</span>
+                <span>Question history tracking</span>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section">
+                    <h2><span class="step-number">1</span>Upload Document</h2>
+                    <div class="file-upload">
+                        <input type="file" id="fileInput" class="file-input" accept=".pdf,.txt">
+                        <label for="fileInput" class="file-label">
+                            📄 Choose PDF or TXT file
+                        </label>
+                    </div>
+                    <div id="fileInfo" class="file-info" style="display: none;"></div>
+                    <div id="uploadStatus" class="status" style="display: none;"></div>
+                </div>
+
+                <div class="section">
+                    <h2><span class="step-number">2</span>Ask Questions</h2>
+                    <div class="question-input-area">
+                        <div class="input-group">
+                            <label for="questionInput">Your Question:</label>
+                            <input type="text" id="questionInput" placeholder="e.g., Who is the main character?" disabled>
+                        </div>
+                        <button id="askBtn" class="btn btn-primary" disabled>Ask</button>
+                    </div>
+                    
+                    <div id="loading" class="loading">
+                        <div class="spinner"></div>
+                        <p>Analyzing document and generating answer...</p>
+                    </div>
+                    
+                    <div id="answerSection" class="answer-section" style="display: none;">
+                        <h3>💡 Answer</h3>
+                        <div id="answerText" class="answer-text">Your answer will appear here...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="section">
+                    <h2><span class="step-number">3</span>Question History</h2>
+                    <div class="history-controls">
+                        <button id="clearHistoryBtn" class="btn btn-secondary" style="display: none;">Clear History</button>
+                        <span id="historyCount" class="history-count">0 questions</span>
+                    </div>
+                    <div id="history" class="history">
+                        <div class="empty-history">
+                            <div class="empty-icon">💭</div>
+                            <p>No questions asked yet...</p>
+                            <p style="font-size: 0.8em; color: #999; margin-top: 5px;">Upload a document and ask questions to see history here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
