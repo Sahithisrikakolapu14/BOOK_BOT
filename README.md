@@ -1,11 +1,14 @@
 **BookBot - AI-Powered Book Question Answering System**
 **"Read Less, Learn More!"**
+
 BookBot is an intelligent, interactive application that allows users to upload documents (PDF or TXT) and ask natural language questions about the content. It combines a clean web interface with advanced NLP techniques to provide accurate, context-based answers.
 
 **Overview**
+
 BookBot helps users save time by analyzing entire documents and answering specific questions directly from their content. It supports file uploads, processes the text using AI, and displays the result instantly in a modern, user-friendly UI.
 
 **Features:**
+
 1. Supports both PDF and text files
 2. Breaks books into smaller chunks for better processing
 3. Uses FAISS indexing for fast and efficient text retrieval
@@ -15,6 +18,7 @@ BookBot helps users save time by analyzing entire documents and answering specif
 7. Works well for students, researchers, and professionals
    
 **Project Structure**
+
   bookbot/
   ├── index.html         
   ├── css/
@@ -24,6 +28,7 @@ BookBot helps users save time by analyzing entire documents and answering specif
 └── README.md 
 
 **How It Works:**
+
 Load the Book – Reads the text from a PDF or text file
 Split Text into Chunks – Breaks the book into small sections
 Generate Embeddings – Converts each chunk into numerical vectors
@@ -44,6 +49,7 @@ No additional setup or dependencies required - everything runs in the browser!
 **Usage**
 
 **1. Upload a Document**
+
   Click the "Choose PDF or TXT file" button
   
   Select your document from your device
@@ -51,6 +57,7 @@ No additional setup or dependencies required - everything runs in the browser!
   Wait for the processing confirmation
 
 **2. Ask Questions**
+
   Type your question in the input field
   
   Press Enter or click "Ask" to submit
@@ -58,6 +65,7 @@ No additional setup or dependencies required - everything runs in the browser!
   View the AI-generated response
 
 **3. Review History**
+
   All questions and answers are automatically saved
   
   View your question history in the right panel
@@ -65,6 +73,7 @@ No additional setup or dependencies required - everything runs in the browser!
   Clear history when needed
   
 **Sample Questions**
+
   Try asking questions like:
   
   "Who is the main character?"
@@ -117,5 +126,6 @@ This project is open-source and available under the MIT License.
 
 
 **Contact:**
+
 For questions or collaborations, reach out:
 [sahithisrikakolapu@gmail.com]
