@@ -77,20 +77,31 @@ No additional setup or dependencies required - everything runs in the browser!
   Try asking questions like:
   
   "Who is the main character?"
+  
   "What is the setting of the story?"
+  
   "What are the main themes?"
+  
   "Who wrote this book?"
+  
   "What is the plot summary?"
 
 **Example Output:**
 
   Loading book...
+  
   Generating embeddings...
+  
   Building FAISS index...
+  
   Retrieving relevant context...
+  
   Loading QA model...
+  
   Answering question...
+  
   Q: Who is the main character?
+  
   A: Lady Catherine.
 
 **Technologies Used:**
