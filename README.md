@@ -13,6 +13,7 @@ BookBot helps users save time by analyzing entire documents and answering specif
 5. Clean and responsive interface with animations
 6. Works on both desktop and mobile
 7. Works well for students, researchers, and professionals
+   
 **Project Structure**
   bookbot/
   ├── index.html         
@@ -21,6 +22,7 @@ BookBot helps users save time by analyzing entire documents and answering specif
   ├── js/
   │   └── main.js        
 └── README.md 
+
 **How It Works:**
 Load the Book – Reads the text from a PDF or text file
 Split Text into Chunks – Breaks the book into small sections
@@ -32,24 +34,36 @@ Generate an Answer – Uses an AI model to extract the best answer
 **Installation & Setup**
 
 1.Clone or download the project files
+
 2.Ensure proper folder structure as shown above
+
 3.Open index.html in your web browser
+
 No additional setup or dependencies required - everything runs in the browser!
+
 **Usage**
+
 **1. Upload a Document**
   Click the "Choose PDF or TXT file" button
+  
   Select your document from your device
+  
   Wait for the processing confirmation
 
 **2. Ask Questions**
   Type your question in the input field
+  
   Press Enter or click "Ask" to submit
+  
   View the AI-generated response
 
 **3. Review History**
   All questions and answers are automatically saved
+  
   View your question history in the right panel
+  
   Clear history when needed
+  
 **Sample Questions**
   Try asking questions like:
   
@@ -88,6 +102,7 @@ LocalStorage – Saves question-answer history on frontend
 
 
 **Future Improvements:**
+
 1. Support multiple books in a single query
 
 2.Add voice-based question support
@@ -97,6 +112,7 @@ LocalStorage – Saves question-answer history on frontend
 4.Add admin analytics dashboard
 
 **License:**
+
 This project is open-source and available under the MIT License.
 
 
