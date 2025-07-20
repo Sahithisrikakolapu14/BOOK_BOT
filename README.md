@@ -1,7 +1,10 @@
+
 **BookBot - AI-Powered Book Question Answering System**
 **"Read Less, Learn More!"**
 
 BookBot is an intelligent, interactive application that allows users to upload documents (PDF or TXT) and ask natural language questions about the content. It combines a clean web interface with advanced NLP techniques to provide accurate, context-based answers.
+
+<img width="970" height="807" alt="image" src="https://github.com/user-attachments/assets/b4c848f0-2b0f-4d81-bf5e-1e043630bc03" />
 
 **Overview**
 
