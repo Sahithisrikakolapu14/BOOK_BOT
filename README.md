@@ -1,150 +1,80 @@
+# Smart Document Query System Using NLP
 
-**BookBot - AI-Powered Book Question Answering System**
-**"Read Less, Learn More!"**
+## About the Project
+The Smart Document Query System is an AI-based application that enables users to interact with documents using natural language. Instead of manually searching through large PDFs or reports, users can simply ask questions and receive precise, context-aware answers.
 
-BookBot is an intelligent, interactive application that allows users to upload documents (PDF or TXT) and ask natural language questions about the content. It combines a clean web interface with advanced NLP techniques to provide accurate, context-based answers.
+This system leverages modern NLP techniques and semantic search to understand the intent behind queries rather than relying on keyword matching.
 
-<img width="970" height="807" alt="image" src="https://github.com/user-attachments/assets/b4c848f0-2b0f-4d81-bf5e-1e043630bc03" />
+---
 
-**Overview**
+##  Problem
+Searching information in large documents is inefficient:
+- Users must read entire documents manually  
+- Keyword search often returns irrelevant results  
+- No understanding of context or meaning  
 
-BookBot helps users save time by analyzing entire documents and answering specific questions directly from their content. It supports file uploads, processes the text using AI, and displays the result instantly in a modern, user-friendly UI.
+---
 
-**Features:**
+## Solution
+This project introduces an intelligent pipeline that:
+- Extracts and processes document content  
+- Converts text into semantic embeddings  
+- Matches user queries with relevant document sections  
+- Returns accurate answers instantly  
 
-1. Supports both PDF and text files
-2. Breaks books into smaller chunks for better processing
-3. Uses FAISS indexing for fast and efficient text retrieval
-4. Employs transformer-based AI models for accurate answers
-5. Clean and responsive interface with animations
-6. Works on both desktop and mobile
-7. Works well for students, researchers, and professionals
-   
-**Project Structure**
+---
 
-  bookbot/
-  ├── index.html         
-  ├── css/
-  │   └── style.css       
-  ├── js/
-  │   └── main.js        
-└── README.md 
+## ⚙️ How It Works
 
-**How It Works:**
+1. **Document Upload**  
+   Users upload PDF or text documents  
 
-Load the Book – Reads the text from a PDF or text file
+2. **Text Extraction & Cleaning**  
+   Removes noise and prepares structured text  
 
-Split Text into Chunks – Breaks the book into small sections
+3. **Chunking**  
+   Splits large text into smaller meaningful chunks  
 
-Generate Embeddings – Converts each chunk into numerical vectors
+4. **Embedding Generation**  
+   Converts chunks into vector representations  
 
-Index with FAISS – Stores the embeddings for fast searching
+5. **Vector Storage**  
+   Stores embeddings for efficient retrieval  
 
-Retrieve Context – Finds the most relevant text chunk for a given question
+6. **Query Processing**  
+   Converts user question into embedding  
 
-Generate an Answer – Uses an AI model to extract the best answer
+7. **Similarity Matching**  
+   Finds the most relevant text chunks  
 
-**Installation & Setup**
+8. **Answer Retrieval**  
+   Displays context-based response  
 
-1.Clone or download the project files
+---
 
-2.Ensure proper folder structure as shown above
+## Tech Stack
 
-3.Open index.html in your web browser
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** Python (Flask / FastAPI)  
+- **AI/NLP:** Transformer Models (BERT), Sentence Embeddings  
+- **Vector Database:** FAISS / ChromaDB  
 
-No additional setup or dependencies required - everything runs in the browser!
+---
 
-**Usage**
+##  Key Features
 
-**1. Upload a Document**
+- Document upload and processing  
+- Semantic (meaning-based) search  
+- AI-powered question answering  
+- Fast and scalable retrieval  
+- Handles large documents efficiently  
 
-  Click the "Choose PDF or TXT file" button
-  
-  Select your document from your device
-  
-  Wait for the processing confirmation
+---
 
-**2. Ask Questions**
+## Run Locally
 
-  Type your question in the input field
-  
-  Press Enter or click "Ask" to submit
-  
-  View the AI-generated response
-
-**3. Review History**
-
-  All questions and answers are automatically saved
-  
-  View your question history in the right panel
-  
-  Clear history when needed
-  
-**Sample Questions**
-
-  Try asking questions like:
-  
-     "Who is the main character?"
-     
-     "What is the setting of the story?"
-     
-     "What are the main themes?"
-     
-     "Who wrote this book?"
-     
-     "What is the plot summary?"
-
-**Example Output:**
-
-  Loading book...
-  
-  Generating embeddings...
-  
-  Building FAISS index...
-  
-  Retrieving relevant context...
-  
-  Loading QA model...
-  
-  Answering question...
-  
-  Q: Who is the main character?
-  
-  A: Lady Catherine.
-
-**Technologies Used:**
-
-Python – Core programming language
-
-PyPDF2 – Extracts text from PDF files
-
-FAISS – Efficient text retrieval using similarity search
-
-Sentence Transformers – Converts text into embeddings
-
-Hugging Face Transformers – Uses RoBERTa for question answering
-
-HTML/CSS/JS – Interactive web interface
-
-LocalStorage – Saves question-answer history on frontend
-
-
-**Future Improvements:**
-
-1. Support multiple books in a single query
-
-2.Add voice-based question support
-
-3.Enable multi-language document Q&A
-
-4.Add admin analytics dashboard
-
-**License:**
-
-This project is open-source and available under the MIT License.
-
-
-**Contact:**
-
-For questions or collaborations, reach out:
-[sahithisrikakolapu@gmail.com]
+```bash
+git clone https://github.com/your-username/smart-document-query-system.git
+cd smart-document-query-system
+pip install -r requirements.txt
+python app.py
