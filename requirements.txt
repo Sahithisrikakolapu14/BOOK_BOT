@@ -1,0 +1,7 @@
+flask
+werkzeug
+PyPDF2
+sentence-transformers
+transformers
+torch
+faiss-cpu

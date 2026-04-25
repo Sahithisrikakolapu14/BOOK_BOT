@@ -1,93 +1,132 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>BookBot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Q&A System</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <div class="container">
-        <h1> BookBot | Discover,Understand and Interact with Any Book</h1>
-        
-        <div class="subtitle">
-		Upload your documents to receive smart, AI-powered answers to your questions.
-        </div>
+<div class="app-container">
 
-        <div class="features">
-            <div class="feature">
-                <span class="feature-icon">📄</span>
-                <span>Supports PDF & TXT files</span>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🧠</span>
-                <span>AI-powered analysis</span>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">💬</span>
-                <span>Natural language queries</span>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">📊</span>
-                <span>Question history tracking</span>
-            </div>
-        </div>
-        
-        <div class="main-content">
-            <div class="left-column">
-                <div class="section">
-                    <h2><span class="step-number">1</span>Upload Document</h2>
-                    <div class="file-upload">
-                        <input type="file" id="fileInput" class="file-input" accept=".pdf,.txt">
-                        <label for="fileInput" class="file-label">
-                            📄 Choose PDF or TXT file
-                        </label>
-                    </div>
-                    <div id="fileInfo" class="file-info" style="display: none;"></div>
-                    <div id="uploadStatus" class="status" style="display: none;"></div>
-                </div>
-
-                <div class="section">
-                    <h2><span class="step-number">2</span>Ask Questions</h2>
-                    <div class="question-input-area">
-                        <div class="input-group">
-                            <label for="questionInput">Your Question:</label>
-                            <input type="text" id="questionInput" placeholder="e.g., Who is the main character?" disabled>
-                        </div>
-                        <button id="askBtn" class="btn btn-primary" disabled>Ask</button>
-                    </div>
-                    
-                    <div id="loading" class="loading">
-                        <div class="spinner"></div>
-                        <p>Analyzing document and generating answer...</p>
-                    </div>
-                    
-                    <div id="answerSection" class="answer-section" style="display: none;">
-                        <h3>💡 Answer</h3>
-                        <div id="answerText" class="answer-text">Your answer will appear here...</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="right-column">
-                <div class="section">
-                    <h2><span class="step-number">3</span>Question History</h2>
-                    <div class="history-controls">
-                        <button id="clearHistoryBtn" class="btn btn-secondary" style="display: none;">Clear History</button>
-                        <span id="historyCount" class="history-count">0 questions</span>
-                    </div>
-                    <div id="history" class="history">
-                        <div class="empty-history">
-                            <div class="empty-icon">💭</div>
-                            <p>No questions asked yet...</p>
-                            <p style="font-size: 0.8em; color: #999; margin-top: 5px;">Upload a document and ask questions to see history here</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="header">
+        <h1>DOCUMENT BASED QUESTION ANSWERING SYSTEM</h1>
     </div>
 
-    <script src="js/main.js"></script>
+    <div class="features">
+        <span>📄 PDF & TXT Support</span>
+        <span>🤖 AI Powered Analysis</span>
+        <span>💭 Natural Language Questions</span>
+        <span>🕒 Questions History</span>
+    </div>
+
+    <div class="content-grid">
+
+        <!-- MAIN -->
+        <div class="main-card glass bordered">
+            <form method="POST" enctype="multipart/form-data" onsubmit="showLoader()">
+
+                <label>Upload Book</label>
+                <input type="file" name="book">
+
+                <label>Ask a Question</label>
+
+                <div class="voice-input">
+                    <input type="text" id="question" name="question"
+                           placeholder="Type or speak your question..." required>
+
+                    <button type="button" id="mic-btn">🎙️</button>
+                </div>
+
+                <input type="hidden" name="answer_type" id="answer_type"
+                       value="{{ answer_type or 'short' }}">
+
+                <div class="answer-type">
+                    <button type="button"
+                            class="type-btn {% if answer_type=='short' %}active{% endif %}"
+                            onclick="setType('short', this)">Short</button>
+
+                    <button type="button"
+                            class="type-btn {% if answer_type=='medium' %}active{% endif %}"
+                            onclick="setType('medium', this)">Medium</button>
+
+                    <button type="button"
+                            class="type-btn {% if answer_type=='long' %}active{% endif %}"
+                            onclick="setType('long', this)">Long</button>
+                </div>
+
+                <button type="submit" class="primary-btn">Get Answer</button>
+            </form>
+
+            <div id="loader" class="loader"></div>
+
+            {% if answer %}
+            <div class="answer-box">
+                <h3>Answer</h3>
+                <p>{{ answer }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- HISTORY -->
+        <div class="history-card glass bordered">
+            <div class="history-header">
+                <h3>History</h3>
+                {% if history %}
+                <form method="POST" action="/clear-history">
+                    <button type="submit" class="clear-btn">🧹 Clear</button>
+                </form>
+                {% endif %}
+            </div>
+
+            {% for q, a in history %}
+            <div class="history-item">
+                <p><b>Q:</b> {{ q }}</p>
+                <p><b>A:</b> {{ a }}</p>
+            </div>
+            {% else %}
+            <p class="muted">No history yet</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+<script>
+function setType(type, btn) {
+    document.getElementById("answer_type").value = type;
+    document.querySelectorAll(".type-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+}
+
+function showLoader() {
+    document.getElementById("loader").style.display = "block";
+}
+
+/* 🎙️ VOICE INPUT */
+const micBtn = document.getElementById("mic-btn");
+const questionInput = document.getElementById("question");
+
+const SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
+if (!SpeechRecognition) {
+    micBtn.disabled = true;
+    micBtn.innerText = "❌";
+} else {
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-US";
+
+    micBtn.onclick = () => recognition.start();
+
+    recognition.onresult = (e) => {
+        questionInput.value = e.results[0][0].transcript;
+    };
+}
+</script>
+
 </body>
 </html>
